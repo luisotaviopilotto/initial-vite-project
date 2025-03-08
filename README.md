@@ -1,54 +1,102 @@
-# React + TypeScript + Vite
+# Vite + React + TypeScript + TailwindCSS + ShadCN
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern React project template built with Vite, featuring a powerful tech stack for rapid development:
 
-Currently, two official plugins are available:
+- ⚡️ [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- ⚛️ [React 19](https://react.dev/) - JavaScript library for user interfaces
+- 🔷 [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
+- 🎨 [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
+- 🎯 [ShadCN](https://ui.shadcn.com/) - Re-usable components built with Radix UI and Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Fast development and build times with Vite
+- Type-safe development with TypeScript
+- Modern CSS with Tailwind's utility-first approach
+- Beautiful, accessible components from ShadCN
+- ESLint configuration for code quality
+- Path aliases for clean imports (@/ prefix)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- pnpm (recommended) or npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/luisotaviopilotto/initial-vite-project.git
+
+# Navigate to project directory
+cd initial-vite-project
+
+# Install dependencies
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Available Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Start development server
+pnpm dev
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
+
+# Run ESLint
+pnpm lint
 ```
+
+## Project Structure
+
+```
+├── src/
+│   ├── components/     # React components
+│   │   └── ui/        # ShadCN UI components
+│   ├── lib/           # Utility functions
+│   ├── assets/        # Static assets
+│   ├── App.tsx        # Main App component
+│   └── main.tsx       # Application entry point
+├── public/            # Public static files
+└── [config files]     # Various configuration files
+```
+
+## Adding ShadCN Components
+
+This project uses ShadCN for UI components. To add a new component:
+
+```bash
+pnpx shadcn-ui@latest add [component-name]
+```
+
+Example:
+
+```bash
+pnpx shadcn-ui@latest add button
+```
+
+## Development Guidelines
+
+- Use TypeScript for type-safe development
+- Follow the existing project structure
+- Utilize ShadCN components when available
+- Write clean, maintainable code
+- Follow ESLint rules for consistent code style
+
+## ESLint Configuration
+
+The project includes a robust ESLint configuration for TypeScript and React. It includes:
+
+- Type-aware lint rules
+- React-specific linting with eslint-plugin-react-x
+- DOM-specific rules with eslint-plugin-react-dom
+
+## License
+
+MIT
